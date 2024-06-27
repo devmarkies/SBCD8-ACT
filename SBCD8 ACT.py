@@ -3,14 +3,14 @@ import os
 users = {}
 
 def load_users():
-    if os.path.exists("users.txt"):
-        with open("users.txt", "r") as file:
+    if os.path.exists("markie.txt"):
+        with open("markie.txt", "r") as file:
             for line in file:
                 username, password = line.strip().split(',')
                 users[username] = password
 #####
 def save_users():
-    with open("users.txt", "w") as file:
+    with open("markie.txt", "w") as file:
         for username, password in users.items():
             file.write(f"{username},{password}\n")
 #####
@@ -51,11 +51,11 @@ def change_password():
 #####
 while True:
     print("====Welcome to simple login====")
-    print("\nSelect an option:")
+    print("======Select number======")
     print("1. Register")
     print("2. Log in")
     print("3. Change password")
-    print("4. Exit")
+
     
     num = input("Enter ur number: ")
     
@@ -65,8 +65,6 @@ while True:
         login()
     elif num == '3':
         change_password()
-    elif num == '4':
-        print("Exit...")
         break
     else:
-        print("Invalid choice, please try again.")
+        print("please try again.")
